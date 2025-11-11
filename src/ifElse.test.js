@@ -27,4 +27,11 @@ describe('ifElse', () => {
     expect(second).toHaveBeenCalled();
   });
 
+  it('should condition return anything', () => {
+    const condition = jest.fn(() => true);
+    const first = jest.fn();
+    const second = jest.fn();
+
+    expect(ifElse(condition, first, second)).toBeUndefined();
+  });
 });
